@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
+import { OPEN_AI_KEY, COMPLETION_MODEL, COMPLETION_API, GEN_IMAGE_API, GEN_IMAGE_MODEL } from '@env'
 
 export default function App() {
   const [keyword, setKeyword] = useState("")
@@ -24,14 +25,14 @@ export default function App() {
     }
     const newMsgs = [...messages, message]
     setMessages(newMsgs)
-    fetch(process.env.COMPLETION_API, {
+    fetch(COMPLETION_API, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPEN_AI_KEY}`
+        "Authorization": `Bearer ${OPEN_AI_KEY}`
       },
       body: JSON.stringify({
-        "model": process.env.COMPLETION_MODEL,
+        "model": COMPLETION_MODEL,
         "prompt": keyword
       })
     }).then((response) => response.json())
@@ -58,15 +59,15 @@ export default function App() {
     }
     const newMsgs = [...messages, message]
     setMessages(newMsgs)
-    fetch(process.env.GEN_IMAGE_API, {
+    fetch(GEN_IMAGE_API, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPEN_AI_KEY}`
+        "Authorization": `Bearer ${OPEN_AI_KEY}`
       },
       body: JSON.stringify({
         "prompt": keyword,
-        "model": process.env.GEN_IMAGE_MODEL,
+        "model": GEN_IMAGE_MODEL,
         "n": 2,
         "size": "1024x1024"
       })
