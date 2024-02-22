@@ -11,14 +11,14 @@
 ##### Command lines
 | Command                                                              | Action                        |
 | :------------------------------------------------------------------- | :---------------------------- |
-| `$ git clone https://github.com/ningo-agilityio/rn-chatgpt` | Clone Repository with HTTPS   |
-| `$ git clone git@github.com:ningo-agilityio/rn-chatgpt.git` | Clone Repository with SSH     |
-| `$ cd rn-chatgpt`                                                | Redirect to folder            |
-| `$ git checkout main`                         | Checkout branch               |
-| `$ git checkout main`                         | Add .env file and add OPEN_AI_KEY value             |
-| `$ yarn i`                                                           | Install packages dependencies |
-| `$ yarn run ios`                                                   | Run on ios
-| `$ yarn run android`                                                   | Run on android
+| `git clone https://github.com/ningo-agilityio/rn-chatgpt` | Clone Repository with HTTPS   |
+| `git clone git@github.com:ningo-agilityio/rn-chatgpt.git` | Clone Repository with SSH     |
+| `cd rn-chatgpt`                                                | Redirect to folder            |
+| `git checkout main`                         | Checkout branch               |
+| Add .env file in root folder                         | Add .env file and add OPEN_AI_KEY value             |
+| `yarn i`                                                           | Install packages dependencies |
+| `yarn run ios`                                                   | Run app on ios
+| `yarn run android`                                                   | Run app on android
 
 ## Author
 - Ni Ngo.
